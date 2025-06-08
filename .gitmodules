@@ -1,0 +1,9 @@
+[submodule "network-repo"]
+	path = network-repo
+	url = ../network-repo
+[submodule "compute-repo"]
+	path = compute-repo
+	url = ../compute-repo
+[submodule "storage-repo"]
+	path = storage-repo
+	url = ../storage-repo
