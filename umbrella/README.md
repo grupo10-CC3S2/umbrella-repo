@@ -50,7 +50,7 @@ multirepo
 ---
 ---
 ## V-0.1
-> **Fecha**: 18-06-2025\
+> **Fecha**: 17-06-2025\
 **Autor**: Luna-Chriss5-2\
 **Detalle**:\
 - Actualizar estructura similar de multirepo para que quede similar a la de monorepo, modificando los archivos de los repositorios `compute_repo`, `network_repo` y `storage-repo` 
@@ -87,4 +87,74 @@ multirepo
             ├───repots
             |   └───update.logs
             └───README.md
+```
+---
+---
+## V-0.2
+> **Fecha**: 19-06-2025\
+**Autor**: Luna-Chriss5-2\
+**Detalle**:\
+- Implementación del script **rollback.sh** el cuál tendrá como objetivo el versionamiento de submódulos, con 4 opciones disponibles `Roll back al último tag semántico`, `Roll back a un tag específico`, `Mantener el estado actual y cambiar de módulo` y por último `Sair del rollback`
+- Implementación del script **simular_drift** el cuál tendrá como objetivo, levantar la infraestructura de cada submódulos, luego realizar un cambio "manual" en el interior de la infraestructura ya creada, para al último realizar `terraform plan` y verificar el aviso de drift por cambiar los parámetros creados anteriormente por la infraestructura actual en ejecución
+- Agregar triggers de los archivos **main.tf** de los submódulos `compute_repo`, `network_repo` y `storage-repo` para de esta manera, poder facilitar la modificación del archivo **terraform.tfstate** y poder realizar el script **simular_drift** de manera efectiva
+- Agregación de la carpeta `enviroments` con las subcarpetas `iac\multirepo\umbrella-repo\enviroments\python` (aún no implementado), `iac\multirepo\umbrella-repo\enviroments\terraform\source_path` y `iac\multirepo\umbrella-repo\enviroments\terraform\source_repository` para mostrar las distintas formas de ejecutar la creación de módulos con los submódulos creados, siendo la primera forma, que el **source** del modulo apunte directamente al path actual `source_path` o la segunda forma se basa en que el **source** del módulo, apuntará directamente a la ruta del repositorio github sobre el que se encuentra creado `source_repository`
+- Agregar `tests\test_drift.py` el cuál se encargará de testear el script `simular_drift.py` usando pytest
+**Arbol actual**
+```bash
+    multirepo
+    │   .gitignore
+    │   .gitmodules
+    │
+    ├───.pytest_cache
+    │   │   .gitignore
+    │   │   CACHEDIR.TAG
+    │   │   README.md
+    │   │
+    │   └───v
+    │       └───cache
+    │               lastfailed
+    │               nodeids
+    │               stepwise
+    │
+    ├───compute-repo
+    │       CHANGELOG.md
+    │       main.tf
+    │       outputs.tf
+    │       variables.tf
+    │
+    ├───enviroments
+    │   ├───python
+    │   └───terraform
+    │       ├───source_path
+    │       │       main.tf
+    │       │
+    │       └───source_repository
+    │               main.tf
+    │
+    ├───network-repo
+    │       CHANGELOG.md
+    │       main.tf
+    │       network_tool.sh
+    │       outputs.tf
+    │       variables.tf
+    │
+    ├───scripts
+    │       rollback.sh
+    │       simular_drift.sh
+    │       update_all.sh
+    │
+    ├───storage-repo
+    │       CHANGELOG.md
+    │       main.tf
+    │       outputs.tf
+    │       variables.tf
+    │
+    ├───tests
+    │       test_drift.py
+    │
+    └───umbrella
+        │   README.md
+        │
+        └───reports
+                update.log
 ```
