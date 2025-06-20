@@ -1,50 +1,5 @@
-✅ Último tag: v-0.2
-HEAD is now at 4b89736 feat(tf): Implementar triggers para la simulación de drift
-🚀 Ejecutando Terraform en compute-repo...
-[0m[1mInitializing the backend...[0m
-[0m[1mInitializing provider plugins...[0m
-- Finding latest version of hashicorp/null...
-- Installing hashicorp/null v3.2.4...
-- Installed hashicorp/null v3.2.4 (signed by HashiCorp)
-Terraform has created a lock file [1m.terraform.lock.hcl[0m to record the provider
-selections it made above. Include this file in your version control repository
-so that Terraform can guarantee to make the same selections by default when
-you run "terraform init" in the future.[0m
-
-[0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
-[0m[32m
-You may now begin working with Terraform. Try running "terraform plan" to see
-any changes that are required for your infrastructure. All Terraform commands
-should now work.
-
-If you ever set or change modules or backend configuration for Terraform,
-rerun this command to reinitialize your working directory. If you forget, other
-commands will detect it and remind you to do so if necessary.[0m
-[0m[1mvar.network_name[0m
-  [1mEnter a value:[0m [0m
-Interrupt received.
-Please wait for Terraform to exit or data loss may occur.
-Gracefully shutting down...
-
-[31m╷[0m[0m
-[31m│[0m [0m[1m[31mError: [0m[0m[1mNo value for required variable[0m
-[31m│[0m [0m
-[31m│[0m [0m[0m  on variables.tf line 6:
-[31m│[0m [0m   6: [4mvariable "network_name"[0m {[0m
-[31m│[0m [0m
-[31m│[0m [0mThe root module input variable "network_name" is not set, and has no
-[31m│[0m [0mdefault value. Use a -var or -var-file command line argument to provide a
-[31m│[0m [0mvalue for this variable.
-[31m╵[0m[0m
-✅ Último tag: v-0.2
-HEAD is now at 4b89736 feat(tf): Implementar triggers para la simulación de drift
-🚀 Ejecutando Terraform en compute-repo...
-✅ Último tag: v-0.2
-HEAD is now at 1f20aac feat(tf): Implementar triggers para la simulación de drift
-🚀 Ejecutando Terraform en network-repo...
-✅ Último tag: v-0.2
-HEAD is now at 6e3e057 feat(tf): Implementar triggers para la simulación de drift
-🚀 Ejecutando Terraform en storage-repo...
+🔄 Actualizando submódulos al último tag semántico v-* y ejecutando Terraform...
+📦 Procesando compute-repo...
 ✅ Último tag: v-0.2
 HEAD is now at 4b89736 feat(tf): Implementar triggers para la simulación de drift
 🚀 Ejecutando Terraform en compute-repo...
@@ -64,7 +19,7 @@ rerun this command to reinitialize your working directory. If you forget, other
 commands will detect it and remind you to do so if necessary.[0m
 [0m[1mvar.network_name[0m
   [1mEnter a value:[0m [0m
-[0m[1mnull_resource.server-1: Refreshing state... [id=8415756547465082350][0m
+[0m[1mnull_resource.server-1: Refreshing state... [id=2990084846609913504][0m
 
 [0m[1m[32mNo changes.[0m[1m Your infrastructure matches the configuration.[0m
 
@@ -93,7 +48,7 @@ should now work.
 If you ever set or change modules or backend configuration for Terraform,
 rerun this command to reinitialize your working directory. If you forget, other
 commands will detect it and remind you to do so if necessary.[0m
-[0m[1mnull_resource.network-1: Refreshing state... [id=1540749835619427480][0m
+[0m[1mnull_resource.network-1: Refreshing state... [id=1934026228082682240][0m
 
 [0m[1m[32mNo changes.[0m[1m Your infrastructure matches the configuration.[0m
 
@@ -126,7 +81,7 @@ commands will detect it and remind you to do so if necessary.[0m
   [1mEnter a value:[0m [0m
 [0m[1mvar.server_name[0m
   [1mEnter a value:[0m [0m
-[0m[1mnull_resource.db-1: Refreshing state... [id=3551984136878394384][0m
+[0m[1mnull_resource.db-1: Refreshing state... [id=4954654062378478421][0m
 
 [0m[1m[32mNo changes.[0m[1m Your infrastructure matches the configuration.[0m
 
